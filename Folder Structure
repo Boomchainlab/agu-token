@@ -1,0 +1,18 @@
+agu-token-dapp/
+├── public/
+├── src/
+│   ├── abi/
+│   │   └── AGUToken.json
+│   ├── components/
+│   │   ├── WalletConnect.tsx
+│   │   ├── TokenDashboard.tsx
+│   ├── pages/
+│   │   └── index.tsx
+│   ├── hooks/
+│   │   └── useAGU.ts
+│   └── utils/
+│       └── contracts.ts
+├── .env.local
+├── next.config.js
+├── package.json
+└── README.md
