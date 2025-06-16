@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.4 (2025-06-16)
+
+Full Changelog: [v1.0.0...v2.3.4](https://github.com/Boomchainlab/agu-token/compare/v1.0.0...v2.3.4)
+
+### Chores
+
+* **internal:** version bump ([7aa3dd9](https://github.com/Boomchainlab/agu-token/commit/7aa3dd90bd56c3f8aca9dba05b83133b32aa6507))
+
 ## 1.0.0 (2025-06-16)
 
 Full Changelog: [v0.0.1-alpha.0...v1.0.0](https://github.com/Boomchainlab/agu-token/compare/v0.0.1-alpha.0...v1.0.0)
