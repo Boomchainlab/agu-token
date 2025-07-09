@@ -1,6 +1,6 @@
 [project]
 name = "agu_token"
-version = "2.3.4"
+version = "2.3.5"
 description = "The official Python library for the agu-token API"
 dynamic = ["readme"]
 license = "Apache-2.0"

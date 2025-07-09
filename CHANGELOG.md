@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.5 (2025-06-16)
+
+Full Changelog: [v2.3.4...v2.3.5](https://github.com/Boomchainlab/agu-token/compare/v2.3.4...v2.3.5)
+
 ## 2.3.4 (2025-06-16)
 
 Full Changelog: [v1.0.0...v2.3.4](https://github.com/Boomchainlab/agu-token/compare/v1.0.0...v2.3.4)
