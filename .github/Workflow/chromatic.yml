@@ -1,0 +1,64 @@
+name: "Chromatic Visual Tests"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:  # 👈 Enables manual trigger via API or UI
+
+jobs:
+  chromatic-storybook:
+    name: "Chromatic Storybook"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Chromatic Storybook
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "✅ Auto-approving visual changes on main"
+            npx chromatic --project-token=chpt_8722db30209cbcf --auto-accept-changes
+          else
+            echo "🔍 PR or other branch — manual review"
+            npx chromatic --project-token=chpt_8722db30209cbcf
+          fi
+
+  chromatic-playwright:
+    name: "Chromatic Playwright"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Chromatic Playwright
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "✅ Auto-approving Playwright visual changes on main"
+            npx chromatic --playwright --project-token=chpt_8722db30209cbcf --auto-accept-changes
+          else
+            echo "🔍 PR or other branch — manual review"
+            npx chromatic --playwright --project-token=chpt_8722db30209cbcf
+          fi
